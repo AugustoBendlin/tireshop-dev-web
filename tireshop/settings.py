@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-8_dr-t3#n*j0zk(5r-8h9p8o5!uwtbb^+ddby-8u9j*98oy0yf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tireshop-dev-web.herokuapp.com']
+ALLOWED_HOSTS = ['tireshop-dev-web.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'core',
 ]
 
