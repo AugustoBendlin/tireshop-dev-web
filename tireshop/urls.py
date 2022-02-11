@@ -4,6 +4,11 @@ from django.urls import path, include
 from core import views
 from rest_framework import routers
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
 router = routers.DefaultRouter()
 router.register(r'categorias', views.CategoriaViewSet)
 router.register(r'fabricante', views.FabricanteViewSet)
@@ -12,6 +17,8 @@ router.register(r'compra', views.CompraViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('teste/', views.teste),
     path('teste2/', views.teste2),
     path('categorias-class/', views.CategoriaView.as_view()),
